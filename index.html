@@ -3,26 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takreem Fatima - Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">                                                  
+    <title>Takreem Fatima Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline CSS to set the background color to pink */
+        body {
+            background-color: pink;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for centering the header */
+        header {
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Style for navigation in the top-right corner */
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        /* Hide all sections initially */
+        section {
+            display: none;
+        }
+
+        /* Show the active section */
+        section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <!-- Centered Heading -->
         <h1>Takreem Fatima</h1>
+        <!-- Navigation in top-right -->
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Welcome to My Portfolio</h2>
-        <p>Explore my work and feel free to reach out.</p>
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <h2>My Projects</h2>
+            <h3>C++ Projects</h3>
+            <ul>
+                <li>Project 1: A simple calculator</li>
+                <li>Project 2: Tic-Tac-Toe Game</li>
+                <!-- Add more C++ projects here -->
+            </ul>
+
+            <h3>Web Designing Projects</h3>
+            <ul>
+                <li>Project 1: Personal Portfolio Website</li>
+                <li>Project 2: E-commerce Website</li>
+                <!-- Add more web designing projects here -->
+            </ul>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a web designer having expertise in HTML and C++.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to contact me via Gmail: <a href="mailto:fatti0453@gmail.com">fatti0453@gmail.com</a></p>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Takreem Fatima</p>
     </footer>
+
+    <script>
+        // JavaScript function to toggle sections
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show the clicked section
+            const sectionToShow = document.getElementById(sectionId);
+            sectionToShow.classList.add('active');
+        }
+    </script>
 </body>
 </html>
