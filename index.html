@@ -52,6 +52,12 @@
             border-radius: 5px;
         }
 
+        /* Highlight the selected tab */
+        nav ul li a.selected {
+            background-color: #333;
+            color: white;
+        }
+
         nav ul li a:hover {
             background-color: #ddd;
         }
@@ -65,18 +71,45 @@
         section.active {
             display: block;
         }
+
+        /* Style for button-like links */
+        a.button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px; /* Adjusted the size for better visibility */
+            height: auto;
+            border-radius: 50%; /* Optional: To make it round like the image you uploaded */
+        }
     </style>
 </head>
 <body>
     <header>
+        <!-- Logo in the top-left corner -->
+        <img src="/C:\Users\PRIME COMPUTER\Downloads/fatti coder.png" alt="Fatti Coder Logo" class="logo">
+
         <!-- Centered Heading -->
         <h1>Takreem Fatima</h1>
         <!-- Navigation in top-right -->
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('home')">Home</a></li>
-                <li><a href="#" onclick="showSection('about')">About</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="#" onclick="showSection('home', this)" class="selected">Home</a></li>
+                <li><a href="#" onclick="showSection('about', this)">About</a></li>
+                <li><a href="#" onclick="showSection('contact', this)">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -87,7 +120,11 @@
             <h2>My Projects</h2>
             <h3>C++ Projects</h3>
             <ul>
-                <li>Project 1: A simple calculator</li>
+                <li>
+                    <a href="https://github.com/takreemfatima-coder/My-first-project.git" target="_blank" class="button">
+                        A simple calculator
+                    </a>
+                </li>
                 <li>Project 2: Tic-Tac-Toe Game</li>
                 <!-- Add more C++ projects here -->
             </ul>
@@ -118,8 +155,8 @@
     </footer>
 
     <script>
-        // JavaScript function to toggle sections
-        function showSection(sectionId) {
+        // JavaScript function to toggle sections and highlight the active tab
+        function showSection(sectionId, element) {
             // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active'));
@@ -127,6 +164,13 @@
             // Show the clicked section
             const sectionToShow = document.getElementById(sectionId);
             sectionToShow.classList.add('active');
+
+            // Remove 'selected' class from all links
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => link.classList.remove('selected'));
+
+            // Add 'selected' class to the clicked link
+            element.classList.add('selected');
         }
     </script>
 </body>
