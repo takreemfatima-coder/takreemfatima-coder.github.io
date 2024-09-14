@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">                                                  
     <title>Takreem Fatima Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <style>
         /* Inline CSS to set the background color to pink */
         body {
@@ -23,6 +24,27 @@
             text-align: center;
             position: relative;
             width: 100%;
+        }
+
+        /* Stylish header for "Takreem Fatima" */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem; /* Bigger font size for dominance */
+            color: #333;
+            font-weight: 700;
+            letter-spacing: 2px; /* Adds some spacing between letters */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            margin: 20px 0;
+        }
+
+        /* Stylish but less dominant "My Projects" */
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem; /* Smaller than the main header */
+            color: #444;
+            font-weight: 500;
+            letter-spacing: 1px; /* Slightly smaller spacing */
+            margin-bottom: 10px;
         }
 
         /* Style for navigation in the top-right corner */
@@ -95,6 +117,25 @@
             height: auto;
             border-radius: 50%; /* Optional: To make it round like the image you uploaded */
         }
+
+        /* Fancy bullet styling only for project list */
+        #home ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #home ul li::before {
+            content: "★"; /* Add a fancy star bullet */
+            color: #fff; /* Change bullet color to white */
+            font-size: 20px; /* Size of the bullet */
+            padding-right: 10px; /* Spacing between bullet and text */
+        }
+
+        /* Add line spacing between project links */
+        #home ul li {
+            margin-bottom: 20px; /* Line spacing between each project */
+        }
+
     </style>
 </head>
 <body>
@@ -102,7 +143,7 @@
         <!-- Logo in the top-left corner -->
         <img src="fatti-coder.png" alt="Fatti Coder Logo" class="logo">
 
-        <!-- Centered Heading -->
+        <!-- Centered Stylish Heading -->
         <h1>Takreem Fatima</h1>
         <!-- Navigation in top-right -->
         <nav>
@@ -118,7 +159,6 @@
         <!-- Home Section -->
         <section id="home" class="active">
             <h2>My Projects</h2>
-            <h3>C++ Projects</h3>
             <ul>
                 <li>
                     <a href="https://github.com/takreemfatima-coder/My-first-project.git" target="_blank" class="button">
